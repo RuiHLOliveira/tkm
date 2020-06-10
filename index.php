@@ -34,8 +34,15 @@
 <h1>Lista de Tarefas</h1>
 <h4>Sua lista de tarefas aqui!</h4>
 <hr>
-<a class="btn btn-primary" href="./insert.php">Cadastrar</a>
+<a class="btn btn-primary" href="./insertForm.php">Cadastrar</a>
 <br>
+<br>
+<?php
+    if(isset($_GET['success'])){
+        echo "<div class='alert alert-success' role='alert'>".$_GET['success']."</div>";
+    }
+?>
+
 <?php
 
 foreach ($tarefas as $key => $tarefa) {
@@ -43,8 +50,6 @@ foreach ($tarefas as $key => $tarefa) {
 }
 
 ?>
-
-
 
 </body>
 </html>

@@ -11,13 +11,24 @@
     <script src="https://kit.fontawesome.com/886bf3cc12.js" crossorigin="anonymous"></script>
 </head>
 <body class="container">
+
+
+<br>
     
-    <form action="" method="">
+    <form action="./insertTarefa.php" method="POST">
         <label for="nome">Nome</label>
         <input type="text" name="nome" id="">
         <label for="descricao">Descrição</label>
         <input type="text" name="descricao" id="">
         <input type="submit" value="Enviar">
     </form>
+
+    <?php
+        if(isset($_GET['error'])){
+            echo "<div class='alert alert-danger' role='alert'>".$_GET['error']."</div>";
+        }
+    ?>
+    
+<br>
 </body>
 </html>
