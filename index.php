@@ -14,21 +14,27 @@
 <body class="container">
 
 <?php
-    //mostrar a lista de tarefas
-    $tarefas = [
-        0 => [
-            'id' => 1,
-            'nome' => 'lavar a louça',
-            'descricao' => 'mãe pediu para lavar a louça antes de ela chegar',
-            'completa' => false
-        ],
-        1 => [
-            'id' => 2,
-            'nome' => 'lavar o carro',
-            'descricao' => 'lave o carro',
-            'completa' => false
-        ]
-    ];
+    $dados = "mysql:host=localhost;dbname=tkm;charset=utf8mb4";
+    $pdo = null;
+    try {
+        $pdo = new PDO($dados, "root", "123456", null);
+    } catch (PDOException $e) {
+        echo "<pre>Connection failed:".$e->getMessage()."</pre>";
+    }
+
+    $sql = "select * from tarefas;";
+
+    $statement = $pdo->prepare($sql);
+
+    $result = $statement -> execute();
+
+    if($result == false){
+        echo "<pre> Connection failed: ".var_export($statement->errorInfo(), true)."</pre>";
+        // header('Location: ./index.php?error='.'Não foi possível a tarefa!');
+        return;
+    }
+
+    $tarefas = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <h1>Lista de Tarefas</h1>

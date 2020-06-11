@@ -1,17 +1,15 @@
-
-
 Tarefa
+
 id
 nome
 descricao
 completa
 
-
 login
 
-listar todas as tarefas
-    ok - listar a var de tarefas que está disponível no index.php
-       - carregar a var de tarefas do banco de dados
+ok - listar todas as tarefas
+       ok - listar a var de tarefas que está disponível no index.php
+       ok - carregar a var de tarefas do banco de dados
 ok - cadastrar tarefa
        ok - criar form para cadastrar tarefa
        ok - no index, criar botao de nova tarefa que leva para o form

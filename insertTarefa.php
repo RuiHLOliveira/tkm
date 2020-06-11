@@ -3,7 +3,7 @@
 $nome = $_POST['nome'];
 $descricao = $_POST['descricao'];
 
-$dados = "mysql:host=".'localhost'.";" . "dbname=tkm;" . "charset=utf8mb4";
+$dados = "mysql:host=localhost;dbname=tkm;charset=utf8mb4";
 $pdo = null;
 try {
     $pdo = new PDO($dados, "root", "123456", null);
